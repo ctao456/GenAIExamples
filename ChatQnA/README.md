@@ -10,6 +10,7 @@ ChatQnA architecture shows below:
 
 ChatQnA is implemented on top of [GenAIComps](https://github.com/opea-project/GenAIComps), the ChatQnA Flow Chart shows below:
 
+
 ```mermaid
 ---
 config:
@@ -17,9 +18,10 @@ config:
     nodeSpacing: 100
     rankSpacing: 100
     curve: linear
+    useMaxWidth: true
   theme: base
   themeVariables:
-    fontSize: 42px
+    fontSize: 76px
 ---
 flowchart LR
     %% Colors %%
@@ -28,6 +30,7 @@ flowchart LR
     classDef orchid fill:#C26DBC,stroke:#ADD8E6,stroke-width:2px,fill-opacity:0.5
     classDef invisible fill:transparent,stroke:transparent;
     style ChatQnA-MegaService stroke:#000000
+
     %% Subgraphs %%
     subgraph ChatQnA-MegaService["ChatQnA-MegaService"]
         direction LR
@@ -36,18 +39,20 @@ flowchart LR
         RER([Rerank <br>]):::blue
         LLM([LLM <br>]):::blue
     end
-    subgraph User Interface
-        direction TB
+    subgraph UserInterface["User Interface"]
+        direction LR
+        invisible1[ ]:::invisible
         a([User Input Query]):::orchid
         Ingest([Ingest data]):::orchid
         UI([UI server<br>]):::orchid
     end
     subgraph ChatQnA GateWay
         direction LR
-        invisible1[ ]:::invisible
+        invisible2[ ]:::invisible
         GW([ChatQnA GateWay<br>]):::orange
     end
     subgraph .
+        direction LR
         X([OPEA Micsrservice]):::blue
         Y{{Open Source Service}}
         Z([OPEA Gateway]):::orange
@@ -89,10 +94,6 @@ flowchart LR
     %% Vector DB interaction
     R_RET <-.->|d|VDB
     DP <-.->|d|VDB
-
-
-
-
 ```
 
 This ChatQnA use case performs RAG using LangChain, Redis VectorDB and Text Generation Inference on Intel Gaudi2 or Intel XEON Scalable Processors. The Intel Gaudi2 accelerator supports both training and inference for deep learning models in particular for LLMs. Visit [Habana AI products](https://habana.ai/products) for more details.
