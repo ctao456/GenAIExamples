@@ -19,10 +19,10 @@ config:
     rankSpacing: 100
     curve: linear
     useMaxWidth: true
-  theme: base
   themeVariables:
     fontSize: 76px
 ---
+
 flowchart LR
     %% Colors %%
     classDef blue fill:#ADD8E6,stroke:#ADD8E6,stroke-width:2px,fill-opacity:0.5
@@ -53,7 +53,7 @@ flowchart LR
     end
     subgraph .
         direction LR
-        X([OPEA Micsrservice]):::blue
+        X([OPEA Microservice]):::blue
         Y{{Open Source Service}}
         Z([OPEA Gateway]):::orange
         Z1([UI]):::orchid
