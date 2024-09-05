@@ -20,7 +20,7 @@ config:
     curve: linear
     useMaxWidth: true
   themeVariables:
-    fontSize: 76px
+    fontSize: 66px
 ---
 
 flowchart LR
@@ -34,7 +34,6 @@ flowchart LR
     %% Subgraphs %%
     subgraph ChatQnA-MegaService["ChatQnA-MegaService"]
         direction LR
-        invis0[ ]:::invisible
         EM([Embedding <br>]):::blue
         RET([Retrieval <br>]):::blue
         RER([Rerank <br>]):::blue
@@ -43,15 +42,13 @@ flowchart LR
     subgraph UserInterface["User Interface"]
         direction LR
         invis1[ ]:::invisible
-        invis2[ ]:::invisible
         a([User Input Query]):::orchid
         Ingest([Ingest data]):::orchid
         UI([UI server<br>]):::orchid
     end
     subgraph ChatQnA GateWay
         direction LR
-        invis3[ ]:::invisible
-        invis4[ ]:::invisible
+        invis2[ ]:::invisible
         GW([ChatQnA GateWay<br>]):::orange
     end
     subgraph .
