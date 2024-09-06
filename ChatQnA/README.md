@@ -51,7 +51,7 @@ flowchart LR
         invis2[ ]:::invisible
         GW([ChatQnA GateWay<br>]):::orange
     end
-    subgraph .
+    subgraph  
         direction LR
         X([OPEA Microservice]):::blue
         Y{{Open Source Service}}
