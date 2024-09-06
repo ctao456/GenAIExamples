@@ -20,7 +20,7 @@ config:
     curve: linear
     useMaxWidth: true
   themeVariables:
-    fontSize: 66px
+    fontSize: 46px
 ---
 
 flowchart LR
